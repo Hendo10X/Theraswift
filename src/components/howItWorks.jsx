@@ -137,7 +137,7 @@ const HowItWorks = () => {
                 <div className="relative lg:w-[50%] font-sans">
                   <div className="lg:mb-10 mb-5">
                     <h2 className="text-[#40B36E] lg:text-[30px] font-[700] mb-[20px]">
-                      Order a refile
+                      Order a refill
                     </h2>
                     <p className="lg:text-[22px] font-[400]">
                       Order a refill Tell us the medication you are taking
