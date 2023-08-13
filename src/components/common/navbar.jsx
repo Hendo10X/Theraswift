@@ -1,8 +1,27 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
 import Button from "./button";
+
+
+const linkList = [
+  {
+    id: 1,
+    label: "How it works",
+    path: "/how-it-works",
+  },
+  {
+    id: 2,
+    label: "Doctors",
+    path: "/doctors",
+  },
+  {
+    id: 3,
+    label: "About Us",
+    path: "/about",
+  },
+];
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -19,6 +38,29 @@ const Navbar = () => {
       window.removeEventListener("scroll", makeNavBarSticky);
     };
   });
+
+  const { pathname } = useLocation();
+  const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    switch (pathname) {
+      case "/how-it-works":
+        setTitle("How it works");
+        break;
+      case "/doctors":
+        setTitle("Doctors");
+        break;
+      case "/faq":
+        setTitle("FAQs");
+        break;
+      case "/about":
+        setTitle("About Us");
+        break;
+      default:
+        setTitle("/");
+        break;
+    }
+  }, []);
 
   return (
     <div
@@ -41,31 +83,21 @@ const Navbar = () => {
               : "hidden"
           }`}
         >
-          <div
-            className={`flex capitalize gap-5 text-sm lg:w-[60%] justify-around font-semibold flex-col lg:flex-row w-full `}
-          >
-            <Link to="/how-it-works">
-              <h1 className="cursor-pointer uppercase hover:underline">
-                How it works
-              </h1>
-            </Link>
-
-            <Link to="/doctors">
-              <h1 className="cursor-pointer uppercase hover:underline">
-                for doctors
-              </h1>
-            </Link>
-
-            <Link to="/faq">
-              <h1 className="cursor-pointer uppercase hover:underline">
-                Questions
-              </h1>
-            </Link>
-            <Link to="/about">
-              <h1 className="cursor-pointer uppercase hover:underline">
-                About us
-              </h1>
-            </Link>
+          <div className="flex flex-col items-center justify-center pb-5 pt-8">
+            <ul className="flex gap-10 px-8 py-4 bg-primary-100 rounded-full ">
+              {linkList.map((link) => (
+                  <li
+                      key={link.id}
+                      onClick={() => setTitle(link.label)}
+                      className={`hover:text-green-500 text-md uppercase font-semibold ${
+                          pathname === link.path &&
+                          "text-green-500 border-b-2 border-green-500"
+                      }`}
+                  >
+                    <Link to={link.path}>{link.label}</Link>
+                  </li>
+              ))}
+            </ul>
           </div>
 
           <div className="flex lg:flex-row flex-col gap-5 text-sm w-full lg:w-auto">
