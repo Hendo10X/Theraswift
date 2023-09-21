@@ -27,6 +27,9 @@ const Footer = () => {
         <div className="text-white font-light">
           <h1 className="font-semibold text-xl mb-2">Company info</h1>
           <ul className="text-sm lg:text-base">
+          <Link to="/how-it-works">
+              <li className="mb-2">How it works</li>
+            </Link>
             <Link to="/about">
               <li className="mb-2">About Us</li>
             </Link>

@@ -8,13 +8,13 @@ import Button from "./button";
 const linkList = [
   {
     id: 1,
-    label: "How it works",
-    path: "/how-it-works",
+    label: "For Providers",
+    path: "/doctors",
   },
   {
     id: 2,
-    label: "Doctors",
-    path: "/doctors",
+    label: "For Manufacturers",
+    path: "/manufacturers",
   },
   {
     id: 3,
@@ -43,12 +43,12 @@ const Navbar = () => {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    switch (pathname) {
-      case "/how-it-works":
-        setTitle("How it works");
-        break;
+    switch (pathname) {      
       case "/doctors":
         setTitle("Doctors");
+        break;
+        case'/manufacturers':
+        setTitle('For Manufacturers');
         break;
       case "/faq":
         setTitle("FAQs");
@@ -83,6 +83,7 @@ const Navbar = () => {
               : "hidden"
           }`}
         >
+       
           <div className="flex flex-col items-center justify-center pb-5 pt-8">
             <ul className="flex gap-10 px-8 py-4 bg-primary-100 rounded-full ">
               {linkList.map((link) => (

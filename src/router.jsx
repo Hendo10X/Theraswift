@@ -9,6 +9,7 @@ import Career from "./components/career";
 import CheckIfWeDeliver from "./components/checkIfWeDeliver";
 import DownloadApp from "./components/common/downloadApp";
 import WaitList from "./components/waitlist";
+import Manufacturer from "./components/manufacturers";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
     path: "/doctors",
     element: <Doctors />,
   },
+
+  {
+    path: "/manufacturers",
+    element: <Manufacturer />,
+  },
+
   {
     path: "/faq",
     element: <Faq />,
