@@ -35,6 +35,11 @@ const faq = [
     title: "What if I have a special request?",
     desc: "Feel free to ask your pharmacist.We offer medication syncing, medication counselling, delivery of temperature, controlled drugs, appointment reminder and more. We work with you to manage your medication.",
   },
+
+  {
+    title:"Do you deliver controlled substances?",
+    desc:'Yes. For controlled substances, we will require a signature from you with your prescription if physical'
+  }
 ];
 
 const Faq = () => {
