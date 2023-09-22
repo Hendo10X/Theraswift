@@ -10,6 +10,7 @@ import CheckIfWeDeliver from "./components/checkIfWeDeliver";
 import DownloadApp from "./components/common/downloadApp";
 import WaitList from "./components/waitlist";
 import Manufacturer from "./components/manufacturers";
+import Contact from "./components/contact";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
   {
     path: "/manufacturers",
     element: <Manufacturer />,
+  },
+
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 
   {

@@ -20,7 +20,7 @@ function Manufacturer() {
                             <p className="pt-[30px] md:pt-[100px]">Lets impact lives together</p>
                         </p>
                         <div className=" pt-14 md:pt-[150px] flex justify-center items-center">
-                            <a href='/about' className=" bg-[#1A4942]  md:px-[50px] px-[70px] py-[12px] md:py-[25px] rounded-[5px] md:rounded-[30px] "><p className=" text-white font-semibold text-[12px] md:text-[20px]">Contact Us</p></a>
+                            <a href='/contact' className=" bg-[#1A4942]  md:px-[50px] px-[70px] py-[12px] md:py-[25px] rounded-[5px] md:rounded-[30px] "><p className=" text-white font-semibold text-[12px] md:text-[20px]">Contact Us</p></a>
                         </div>
                     </div>
                     <div className=" flex flex-row items-center  ">
