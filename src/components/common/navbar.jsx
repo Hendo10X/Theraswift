@@ -64,20 +64,21 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-white py-4 font-poppins px-5 lg:px-[90px] top-0 left-0 right-0 ${
+      className={`bg-white py-4 font-poppins px-5 xl:px-[90px] top-0 left-0 right-0 ${
         isSticky ? "fixed" : "relative"
       } fixed z-20`}
     >
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="max-w-[92vw] mx-auto">
+      <div className="flex items-center w-full justify-between">
         <div className="">
           <Link to="/">
             <div className=" bg-white px-5 py-2">
-              <img src={logo} alt="logo" className="lg:w-[150px] w-[130px]" />
+              <img src={logo} alt="logo" className="lg:w-[150px] w-[130px]"/>
             </div>
           </Link>
         </div>
         <div
-          className={`lg:flex w-[70%] lg:justify-between items-center ${
+          className={`lg:flex min-w-[70%] lg:justify-between items-center ${
             menu
               ? "flex flex-col fixed top-0 bottom-0 right-0 bg-white px-5 gap-10 pt-14"
               : "hidden"
@@ -85,7 +86,7 @@ const Navbar = () => {
         >
        
           <div className="flex flex-col items-center justify-center pb-5 pt-8">
-            <ul className="flex gap-10 px-8 py-4 bg-primary-100 rounded-full ">
+            <ul className="flex flex-col lg:flex-row gap-10 px-8 py-4 bg-primary-100 rounded-full whitespace-nowrap ">
               {linkList.map((link) => (
                   <li
                       key={link.id}
@@ -101,18 +102,20 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="flex lg:flex-row flex-col gap-5 text-sm w-full lg:w-auto">
-            <Link to="/download">
+          <div className="flex lg:flex-row flex-col items-center lg:items-start gap-5 text-sm w-full lg:w-auto ">
+            <div className="flex flex-col gap-10 lg:flex-row">
+            <Link className="whitespace-nowrap" to="/download">
               <Button variant="outlined" color="black">
                 LOG IN
               </Button>
             </Link>
 
-            <Link to="/check-if-we-deliver">
+            <Link className="whitespace-nowrap" to="/check-if-we-deliver">
               <Button variant="filled" color="black">
                 GET STARTED
               </Button>
             </Link>
+            </div>
           </div>
         </div>
         <div
@@ -138,6 +141,7 @@ const Navbar = () => {
               "-rotate-[45deg] absolute top-4 !w-7 transition duration-500"
             }`}
           ></div>
+        </div>
         </div>
       </div>
     </div>

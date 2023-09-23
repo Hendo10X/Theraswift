@@ -15,9 +15,9 @@ const How = () => {
             How is Theraswift <span className="text-[#40B36E]">Rx</span>{" "}
             different?
           </h1>
-          <div className=" flex justify-between flex-wrap lg:flex-nowrap gap-10 lg:gap-5">
-            <div className="w-[374px] px-5 py-10 flex flex-col items-center justify-between shadow-2xl ">
-              <img src={arrow} className="w-28 lg:w-21" />
+          <div className=" flex items-center justify-between flex-col lg:flex-row gap-10 lg:gap-5">
+            <div className="w-[374px] h-[325px] px-5 py-10 flex flex-col items-center justify-center shadow-2xl ">
+              <img src={arrow} className="w-20 lg:w-21" />
               <h1 className=" font-poppins font-semibold text-2xl ">
                 LOWEST MEDS PRICE{" "}
               </h1>
@@ -29,18 +29,18 @@ const How = () => {
               </p>
             </div>
 
-            <div className="w-[374px] px-5 py-10 flex flex-col items-center justify-between shadow-2xl ">
-              <img src={note} className="w-28 lg:w-21" />
+            <div className="w-[374px] h-[325px] px-5 py-10 flex flex-col items-center justify-center shadow-2xl ">
+              <img src={note} className="w-20 lg:w-21" />
               <h1 className="font-semibold text-center text-2xl ">
                 WORK WITH YOUR HMO
               </h1>
               <h1 className="font-sans text-[18px] text-center leading-[33px]">
-                Theraswift works with or without <br /> HMO
+                Theraswift works with or without HMO
               </h1>
             </div>
 
-            <div className="w-[374px] px-5 py-10 flex flex-col items-center justify-between shadow-2xl ">
-              <img src={chat} className="w-28 lg:w-21" />
+            <div className="w-[374px] h-[325px] px-5 py-10 flex flex-col items-center justify-center shadow-2xl ">
+              <img src={chat} className="w-20 lg:w-21" />
               <h1 className=" text-2xl font-semibold text-center ">
                 CHAT WITH A PHARMACIST
               </h1>
