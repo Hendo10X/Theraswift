@@ -71,6 +71,7 @@ jobs:
             echo "Project directory does not exist."
           fi
           # Install Node.js dependencies
+          nvm use v18.16.0
           npm install
           npm run build
           # Start your Node.js application with PM2 using npm run dev
