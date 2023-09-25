@@ -54,8 +54,6 @@ jobs:
     - name: SCP Copy to EC2
       run: |
         sudo scp -vvv -r -o StrictHostKeyChecking=no -o ForwardAgent=no -i /home/runner/.ssh/id_rsa * $SSH_HOST:~/projects/$PROJECT_NAME
-        sudo scp -vvv -r -o StrictHostKeyChecking=no -o ForwardAgent=no -i /home/runner/.ssh/id_rsa .env $SSH_HOST:~/projects/$PROJECT_NAME/.env
-        echo "Passed here oo"
       shell: /usr/bin/bash -e {0}
 
     - name: SSH into EC2 and deploy Node.js 18
