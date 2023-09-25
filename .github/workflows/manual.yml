@@ -72,6 +72,7 @@ jobs:
           fi
           # Install Node.js dependencies
           npm install
+          npm run build
           # Start your Node.js application with PM2 using npm run dev
           pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev -p" --name $PROJECT_NAME
         EOF
