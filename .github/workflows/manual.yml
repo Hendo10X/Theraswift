@@ -72,7 +72,7 @@ jobs:
           fi
           # Install Node.js dependencies
           nvm use v18.16.0
-          echo $(node --version
+          echo $(node --version)
           npm install
           npm run build
           # Start your Node.js application with PM2 using npm run dev
