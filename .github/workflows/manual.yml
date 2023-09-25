@@ -61,6 +61,9 @@ jobs:
         ssh -i /home/runner/.ssh/id_rsa $SSH_HOST << EOF
           # Change to your application directory
           cd ~/projects/$PROJECT_NAME
+          rm -rf node_modules
+          rm -rf yarn.lock
+          
           # Check if the project directory exists
           if [ -d $PROJECT_NAME ]; then
             # The project directory exists,update the code with Git
