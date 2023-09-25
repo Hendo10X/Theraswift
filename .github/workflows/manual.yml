@@ -64,9 +64,9 @@ jobs:
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
           echo $(nvm --version)
-          nvm install v18.16.0
           nvm use v18.16.0
           npm install
+          npm run build
           # Start your Node.js application with PM2 using npm run dev
           pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev -p 4000" --name $PROJECT_NAME
         EOF
