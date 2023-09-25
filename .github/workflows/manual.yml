@@ -53,12 +53,12 @@ jobs:
         
     - name: SCP Copy to EC2
       run: |
-        sudo scp -vvv -r -o StrictHostKeyChecking=no -o ForwardAgent=no -i /home/runner/.ssh/id_rsa * $SSH_HOST:~/projects/$PROJECT_NAME
+        sudo scp -r -o StrictHostKeyChecking=no -o ForwardAgent=no -i /home/runner/.ssh/id_rsa * $SSH_HOST:~/projects/$PROJECT_NAME
       shell: /usr/bin/bash -e {0}
 
     - name: SSH into EC2 and deploy Node.js 18
       run: |
-        ssh -vvv -i /home/runner/.ssh/id_rsa $SSH_HOST << EOF
+        ssh -i /home/runner/.ssh/id_rsa $SSH_HOST << EOF
           # Change to your application directory
           cd ~/projects/$PROJECT_NAME
           # Check if the project directory exists
@@ -72,6 +72,7 @@ jobs:
           fi
           # Install Node.js dependencies
           nvm use v18.16.0
+          echo $(node --version
           npm install
           npm run build
           # Start your Node.js application with PM2 using npm run dev
