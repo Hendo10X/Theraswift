@@ -11,7 +11,7 @@ jobs:
 
     env:
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      SSH_HOST: ubuntu@13.40.132.125
+      SSH_HOST: ubuntu@ec2-13-40-132-125.eu-west-2.compute.amazonaws.com
       SSH_IDENTITY_FILE: /home/runner/.ssh/id_rsa
       PROJECT_NAME: ${{ github.event.repository.name }}
 
@@ -29,19 +29,6 @@ jobs:
       shell: /bin/bash -e {0}
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Check Source Directory Permissions and Contents
-      run: |
-        # Check permissions of the source directory
-        if [ -r ./ ]; then
-          echo "Source directory is readable."
-          # Print the contents of the source directory
-          ls -l ./
-        else
-          echo "Source directory is not readable or does not exist."
-          exit 1
-        fi
-      shell: /bin/bash -e {0}
 
     - name: SSH into EC2 and delete existing files
       run: |
@@ -61,12 +48,12 @@ jobs:
         ssh -i /home/runner/.ssh/id_rsa $SSH_HOST << EOF
           # Change to your application directory
           cd ~/projects/$PROJECT_NAME
-          rm -rf node_modules
-          rm -rf yarn.lock
-          
           # Check if the project directory exists
+          rm -rf node_modules
+          rm -rf package-lock.json
+          rm -rf yarn.lock
           if [ -d $PROJECT_NAME ]; then
-            # The project directory exists,update the code with Git
+            # The project directory exists, update the code with Git
             cd $PROJECT_NAME
             git pull
           else
@@ -74,10 +61,12 @@ jobs:
             echo "Project directory does not exist."
           fi
           # Install Node.js dependencies
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          echo $(nvm --version)
+          nvm install v18.16.0
           nvm use v18.16.0
-          echo $(node --version)
           npm install
-          npm run build
           # Start your Node.js application with PM2 using npm run dev
           pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev -p 4000" --name $PROJECT_NAME
         EOF
