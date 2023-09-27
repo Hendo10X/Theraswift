@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -37,10 +37,11 @@ jobs:
           sudo mkdir -p ~/projects/$PROJECT_NAME
           sudo chown -R ubuntu ~/projects
         EOF
-        
+
     - name: SCP Copy to EC2
       run: |
         sudo scp -r -o StrictHostKeyChecking=no -o ForwardAgent=no -i /home/runner/.ssh/id_rsa * $SSH_HOST:~/projects/$PROJECT_NAME
+        sudo scp -r -o StrictHostKeyChecking=no -o ForwardAgent=no -i /home/runner/.ssh/id_rsa .env $SSH_HOST:~/projects/$PROJECT_NAME/.env || echo "no env to copy"
       shell: /usr/bin/bash -e {0}
 
     - name: SSH into EC2 and deploy Node.js 18
@@ -49,9 +50,7 @@ jobs:
           # Change to your application directory
           cd ~/projects/$PROJECT_NAME
           # Check if the project directory exists
-          rm -rf node_modules
-          rm -rf package-lock.json
-          rm -rf yarn.lock
+          rm -rf node_modules package-lock.json dist yarn.lock
           if [ -d $PROJECT_NAME ]; then
             # The project directory exists, update the code with Git
             cd $PROJECT_NAME
@@ -64,9 +63,9 @@ jobs:
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
           echo $(nvm --version)
+          nvm install v18.16.0
           nvm use v18.16.0
           npm install
-          npm run build
           # Start your Node.js application with PM2 using npm run dev
-          pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev -p 4000" --name $PROJECT_NAME
+          pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev -p 4000" --name $PROJECT_NAME --cwd ~/projects/$PROJECT_NAME
         EOF
