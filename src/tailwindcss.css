@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.my_placeholder::placeholder {
+    color: #444;
+    font-size: 16px;
+}
+
+.my-modal {
+    min-width: 500px;
+}
+
+.my-modal > div > p:nth-child(even) {
+    background: rgba(102, 106, 102, 0.1);
+}
+
+.dispense-wrapper {
+    margin: auto;
+    width: 92vw;
+    max-width: 1200px;
+}
+
+.dispense-input {
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.input-container,
+.input-container input,
+.input-container select {
+    width: 20rem;
+    max-width: 100%;
+}
+
+.print-label {
+    border-radius: 6px;
+    box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.25);
+
+    .my_border {
+        border-bottom: 2px solid #222;
+    }
+}

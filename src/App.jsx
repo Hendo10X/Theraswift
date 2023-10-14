@@ -1,16 +1,9 @@
-import { RouterProvider } from "react-router-dom";
 import router from "./router";
-import Footer from "./components/common/footer";
+import { RouterProvider } from "react-router-dom";
 
-
-
-function App() {
-  return (
-    <>
-    
-      <RouterProvider router={router} />
-    </>
-  );
-}
-
+const App = () => (
+  <>
+    <RouterProvider router={router} />
+  </>
+);
 export default App;

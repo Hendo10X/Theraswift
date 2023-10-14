@@ -1,65 +1,60 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Homepage from "./components/homepage";
-import HowItWorks from "./components/howItWorks";
-import Doctors from "./components/doctors";
-import Faq from "./components/faq";
-import About from "./components/about";
-import Career from "./components/career";
-import CheckIfWeDeliver from "./components/checkIfWeDeliver";
-import DownloadApp from "./components/common/downloadApp";
-import WaitList from "./components/waitlist";
-import Manufacturer from "./components/manufacturers";
-import Contact from "./components/contact";
+import Login from "./components/pages/login";
+import Layout from "./components/pages/layout";
+import NotFound from "./components/pages/notFound";
+import Inventory from "./components/pages/inventory";
+import Logout from "./components/pages/logout";
+import Message from "./components/pages/message";
+import Users from "./components/pages/users";
+import Dispense from "./components/pages/inventory/dispense";
+import Doctors from "./components/pages/doctors";
+import Compose from "./components/pages/compose";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Homepage />,
-  },
-  {
-    path: "/how-it-works",
-    element: <HowItWorks />,
-  },
-  {
-    path: "/doctors",
-    element: <Doctors />,
-  },
-
-  {
-    path: "/manufacturers",
-    element: <Manufacturer />,
-  },
-
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-
-  {
-    path: "/faq",
-    element: <Faq />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/career",
-    element: <Career />,
-  },
-  {
-    path: "/check-if-we-deliver",
-    element: <CheckIfWeDeliver />,
-  },
-  {
-    path: "/download",
-    element: <DownloadApp />,
-  },
-  {
-    path: "/join-waitlist",
-    element: <WaitList />,
-  },
+    {
+        path: "/",
+        element: <Layout />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                path: "/inventory",
+                element: <Inventory />,
+            },
+            {
+                path: "/message",
+                element: <Message />,
+            },
+            {
+                path: "/compose",
+                element: <Compose />,
+            },
+            {
+                path: "/users",
+                element: <Users />,
+            },
+            {
+                path: "/dispense",
+                element: <Dispense />,
+            },
+            {
+                path: "/doctors",
+                element: <Doctors />,
+            },
+        ],
+    },
+    {
+        path: "/login",
+        element: <Login />,
+    },
+    {
+        path: "/logout",
+        element: <Logout />,
+    },
+    {
+        path: "*", // Catch-all for other paths
+        element: <NotFound />,
+    },
 ]);
 
 export default router;
