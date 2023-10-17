@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -67,5 +67,5 @@ jobs:
           nvm use v18.16.0
           npm install
           # Start your Node.js application with PM2 using npm run dev
-          pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev -p 4000" --name $PROJECT_NAME --cwd ~/projects/$PROJECT_NAME
+          pm2 restart $PROJECT_NAME --update-env || pm2 start "npm run dev" --name $PROJECT_NAME --cwd ~/projects/$PROJECT_NAME
         EOF
