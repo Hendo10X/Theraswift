@@ -11,6 +11,8 @@ import DownloadApp from "./components/common/downloadApp";
 import WaitList from "./components/waitlist";
 import Manufacturer from "./components/manufacturers";
 import Contact from "./components/contact";
+import DeleteAccount from "./components/DeleteAccount";
+import VerifyAccount from "./components/VerifyAccount";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/how-it-works",
     element: <HowItWorks />,
+  },
+  {
+    path: "/delete-account",
+    element: <DeleteAccount />,
+  },
+  {
+    path: "/verify-account",
+    element: <VerifyAccount />,
   },
   {
     path: "/doctors",
