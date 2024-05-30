@@ -26,7 +26,7 @@ jobs:
               git checkout main 
               git pull origin main --force && echo UPDATED CODEBASE
               node -v
-              npm ci && echo INSTALLED DEPENDENCIES
+              npm i && echo INSTALLED DEPENDENCIES
               npm run build && echo BUILT CODE
               sudo rm -rf /var/www/website &&  echo  REMOVED DIST DIRECTORY
               sudo mkdir -p /var/www/website/dist &&  echo  MADE DIST DIRECTORY
