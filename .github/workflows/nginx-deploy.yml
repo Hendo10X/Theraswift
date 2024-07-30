@@ -35,6 +35,6 @@ jobs:
               sudo mv -f dist /var/www/theraswift.io &&  echo  MOVED BUILT CODE
               sudo mv -f node_modules /var/www/theraswift.io/dist && echo MOVED DEPENDENCIES
               sudo cp serverconf/default.conf /etc/nginx/sites-available/theraswift.io && echo Copied Server Conf
-              sudo ln -s /etc/nginx/sites-available/theraswift.io /etc/nginx/sites-enabled/ && echo Linked Server Conf
+              sudo ln -fs /etc/nginx/sites-available/theraswift.io /etc/nginx/sites-enabled/ && echo Linked Server Conf
               exit
               '
