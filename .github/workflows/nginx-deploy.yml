@@ -6,7 +6,7 @@ on:
 
 jobs:
   Deploy:
-    name: Deploy to EC2
+    name: Deploy to Compute VM
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@theraswift.io '
 
             # Now we have got the access of EC2 and we will start the deploy .
               cd /home/ahmeddapo0110/repos
