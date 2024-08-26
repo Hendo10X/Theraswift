@@ -16,17 +16,24 @@ jobs:
           PRIVATE_KEY: ${{ secrets.SSH_PK }}
           HOSTNAME: ${{secrets.SSH_HOST}}
           USER_NAME: ${{secrets.SSH_USER}}
+          CURRENT_COMMIT: ${{github.sha}}
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@theraswift.io '
-
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@theraswift.io <<EOF
+          export CURRENT_COMMIT=$CURRENT_COMMIT
             #  Now we have got the access of EC2 and we will start the deploy .
               cd /home/ahmeddapo0110/repos
               rm -rf website
               gh repo clone Theraswift-Technology/website
               cd website
-              git checkout main  
+              
+              echo "latest ref"
+              git rev-parse HEAD 
+              git checkout ${CURRENT_COMMIT} && echo "checked out current commit $CURRENT_COMMIT"
+              echo "current ref"
+              git rev-parse HEAD
+              
               node -v
               npm i && echo INSTALLED DEPENDENCIES
               npm run build && echo BUILT CODE
@@ -39,4 +46,4 @@ jobs:
               sudo nginx -t
               sudo systemctl restart nginx
               exit
-              '
+              EOF
