@@ -1,186 +1,114 @@
-import arrow from "../../assets/Arrow.svg";
-import note from "../../assets/note.svg";
-import chat from "../../assets/chat.svg";
 import man from "../../assets/man.png";
-import Plus from "../../assets/plus.png";
+import Plus from "../../assets/plus.svg";
 import Equal from "../../assets/equal.png";
+import Hearts from "../../assets/heart.png";
 import { Link } from "react-router-dom";
+import medsDeliveryImage from '../../assets/medsDelivery.png';  // Add the path to your image
+import supportImage from '../../assets/support.png';  // Add the path to your image
+import manageCareImage from '../../assets/manageCare.png';  // Add the path to your image
+import { ArrowRight, Clock, Heart } from 'lucide-react';
+
 
 const How = () => {
   return (
     <>
-      <div className="w-full border-t-[1px] border-[#00000026] py-[80px] lg:px-[90px] px-5 ">
-        <div className="container mx-auto">
-          <h1 className="lg:text-[50px] lg:leading-[75px] text-2xl font-poppins text-center font-semibold mb-[100px]">
-            How is Theraswift <span className="text-[#40B36E]">Rx</span>{" "}
-            different?
-          </h1>
-          <div className=" flex items-center justify-between flex-col lg:flex-row gap-10 lg:gap-5">
-            <div className="w-[374px] h-[325px] px-5 py-10 flex flex-col items-center justify-center shadow-2xl ">
-              <img src={arrow} className="w-20 lg:w-21" />
-              <h1 className=" font-poppins font-semibold text-2xl ">
-                LOWEST MEDS PRICE{" "}
-              </h1>
-              <p className=" text-[18px] font-body leading-[135%] text-center ">
-                Same pills, same quality
-                <br />
-                lowest price on
-                <br /> prescription drugs.
-              </p>
-            </div>
-
-            <div className="w-[374px] h-[325px] px-5 py-10 flex flex-col items-center justify-center shadow-2xl ">
-              <img src={note} className="w-20 lg:w-21" />
-              <h1 className="font-semibold text-center text-2xl ">
-                WORK WITH YOUR HMO
-              </h1>
-              <h1 className="font-sans text-[18px] text-center leading-[33px]">
-                Theraswift works with or without HMO
-              </h1>
-            </div>
-
-            <div className="w-[374px] h-[325px] px-5 py-10 flex flex-col items-center justify-center shadow-2xl ">
-              <img src={chat} className="w-20 lg:w-21" />
-              <h1 className=" text-2xl font-semibold text-center ">
-                CHAT WITH A PHARMACIST
-              </h1>
-              <p className=" font-body font-normal text-center text-[18px] ">
-                Worried about side effect? <br />
-                something else? Chat with a pharmacist
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full border-t-[3px] border-[#00000026] py-[80px] lg:px-[90px] px-5 ">
-        <div className="container mx-auto">
-          <h1 className="lg:text-[50px] text-2xl text-center font-semibold">
-            How Theraswift <span className="text-[#40B36E]">Rx</span> Works{" "}
-          </h1>
-          <div className="flex justify-between gap-10 flex-col-reverse lg:flex-row lg:py-[100px] py-10">
-            <div className="lg:w-[60%]">
-              <h1 className="font-normal lg:text-2xl ">
-                Skip the pharmacy trip, get your medications <br /> delivered to
-                you.
-              </h1>
-
-              <div className="flex items-center mt-5 ">
-                <div className="bg-[#1A4942] rounded-full lg:p-10 p-5 lg:w-[80px] lg:h-[80px] w-10 h-10 shadow-2xl mr-5 flex justify-center items-center">
-                  <h1 className="font-poppins lg:text-[30px] font-semibold text-white">
-                    1
-                  </h1>
-                </div>
-                <div>
-                  <h1 className="font-poppins lg:text-[24px] font-semibold">
-                    Sign up for Theraswift{" "}
-                    <span className="text-[#40B36E]">Rx</span>
-                  </h1>
-
-                  <p className="lg:text-[24px] font-normal font-body">
-                    Order a refill or have your doctor send us a prescription
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center mt-10 ">
-                <div className="bg-[#1A4942] rounded-full lg:p-10 p-5 lg:w-[80px] lg:h-[80px] w-10 h-10 shadow-2xl mr-5 flex justify-center items-center">
-                  <h1 className="font-poppins lg:text-[30px] font-semibold text-white">
-                    2
-                  </h1>
-                </div>
-                <div>
-                  <h1 className="font-poppins lg:text-[24px] font-semibold">
-                    Schedule your free same day delivery
-                  </h1>
-
-                  <p className="lg:text-[24px] font-normal font-body">
-                    We accept your HMO and deliver your <br />
-                    medications to you
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center mt-10 ">
-                <div className="bg-[#1A4942] rounded-full lg:p-10 p-5 lg:w-[80px] lg:h-[80px] w-10 h-10 shadow-2xl mr-5 flex justify-center items-center">
-                  <h1 className="font-poppins lg:text-[30px] font-semibold text-white">
-                    3
-                  </h1>
-                </div>
-                <div>
-                  <h1 className="font-poppins lg:text-[24px] font-semibold">
-                    We manage your refill
-                  </h1>
-
-                  <p className="lg:text-[24px] font-normal font-body">
-                    We will coordinate with your doctor and text you when it is
-                    time to refill
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-[40%] flex justify-end">
-              <img src={man} className="lg:w-[455px]" />
-            </div>
-          </div>
-
-          <div className="flex justify-center text-white">
-            <Link to="/check-if-we-deliver">
-              <button className="lg:text-[18px] font-semibold px-5 py-3 rounded capitalize mr-5 bg-[#1A4942]">
-                Sign-Up
-              </button>
-            </Link>
-            <Link to="/how-it-works">
-              <button className="lg:text-[18px] font-semibold px-5 py-3 capitalize rounded bg-[#1A4942]">
-                Learn More
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full border-t-[3px] border-[#00000026] py-[80px] lg:px-[90px] px-5 ">
-        <div className="container mx-auto">
-          <div className="text-center mb-10">
-            <h1 className="font-semibold lg:text-[35px] lg:leading-[65px] text-2xl">
-              Theraswift <span className="text-[#40B36E]">Rx</span> is free, you
-              or your HMO pays for your medication.
+       {/* New Section */}
+       <div className="w-full border-t-[3px] border-[#00000026] py-[80px] lg:px-[80px] px-5 ">
+          <div className="container ">
+            <h1 className="text-[24px] lg:text-[36px] text-center font-medium">
+              Experience a simple and <span className="text-[#40B36E]">affordable healthcare</span>
             </h1>
-          </div>
-          <div className="w-full gap-10 flex lg:flex-row flex-col items-center justify-between">
-            <div className="">
-              <h1 className="leading-10 flex text-center lg:text-[30px] text-2xl">
-                Lowest prescription price.
-              </h1>
-            </div>
-            <div className="shrink-0">
-              <img
-                src={Plus}
-                alt="Plus Sign"
-                className="lg:h-[80px] lg:w-[80px] w-16 h-16"
-              />
-            </div>
-
-            <div className="">
-              <h1 className="leading-10 flex text-center lg:text-[30px] text-2xl">
-                Free same day Delivery.
-              </h1>
-            </div>
-            <div className="shrink-0">
-              <img
-                src={Equal}
-                alt="Plus Sign"
-                className="lg:h-[70px] lg:w-[70px] w-16 h-16"
-              />
-            </div>
-            <div className="shrink-0">
-              <h1 className="leading-10 flex text-center lg:text-[25px] text-2xl">
-                The pharmacy you will love at <br /> no extra cost.
-              </h1>
+            <div className="flex justify-between gap-10 flex-col-reverse lg:flex-row lg:py-[70px] py-10">
+              <div className="text-center">
+                <img src={medsDeliveryImage} alt="Meds Delivery" className="mx-auto mb-4" />
+                <h2 className="text-xl font-medium mb-2">Free same day meds delivery<br/>within two hours</h2>
+              </div>
+              <div className="text-center">
+                <img src={supportImage} alt="Support" className="mx-auto mb-4" />
+                <h2 className="text-xl font-medium mb-2">Expert support 24/7 by chat, <br/> text or video</h2>
+              </div>
+              <div className="text-center">
+                <img src={manageCareImage} alt="Manage Care" className="mx-auto mb-4" />
+                <h2 className="text-xl font-medium mb-2">Manage your care <br/>from your phone</h2>
+              </div>
             </div>
           </div>
         </div>
+
+        <div className="w-full border-t-[3px] border-[#00000026] py-[80px] lg:px-[90px] px-5 ">
+      <div className="container ">
+        <div className="flex justify-between items-center mb-12">
+          <h1 className="text-[34px] lg:text-[36px] text-center font-medium">
+            How Theraswift <span className="text-[#40B36E]">Works</span>
+          </h1>
+          <button className="text-sm font-semibold px-4 py-2 bg-white rounded-full hover:bg-green-500 hover:text-white">
+            Learn More
+          </button>
+        </div>
+        <div className="flex justify-between gap-10 lg:py-[70px] py-10">
+          <div className="text-center">
+            <ArrowRight size={88} className="text-[#40B36E] mx-auto mb-4" />
+            <h2 className="text-xl font-medium mb-2">Sign up for Theraswift</h2>
+            <p className="text-gray-600">Find your meds or Chose what <br /> you want to treat</p>
+          </div>
+          <div className="text-center">
+            <Clock size={88} className="text-[#40B36E] mx-auto mb-4" />
+            <h2 className="text-xl font-medium mb-2">Schedule your free same day delivery</h2>
+            <p className="text-gray-600">We deliver your medications to you<br/>No HMO/Insurance is needed.</p>
+          </div>
+          <div className="text-center">
+            <Heart size={88} className="text-[#40B36E] mx-auto mb-4" />
+            <h2 className="text-xl font-medium mb-2">Manage your care</h2>
+            <p className="text-gray-600">We will coordinate with your doctor<br/>and text you when its time to refill</p>
+          </div>
+        </div>
       </div>
+    </div>
+    <div className="w-full py-[90px] lg:px-[90px] px-10">
+      <div className="container mx-auto text-left">
+        <h1 className="lg:text-[35px] text-2xl font-semibold leading-normal">
+          Theraswift is <span className="text-[#40B36E]">free!</span>
+          <br />
+          You only pay for your meds.
+        </h1>
+        <div className="flex justify-center items-center gap-28 lg:mt-12 mt-6">
+          <div className="text-center">
+            <p className="lg:text-[20px] text-xl font-medium">Free same-day delivery</p>
+          </div>
+          <div className="shrink-0">
+            <img
+              src={Plus}
+              alt="Plus Icon"
+              className="lg:h-[40px] lg:w-[40px] w-10 h-10"
+            />
+          </div>
+          <div className="text-center">
+            <p className="lg:text-[20px] text-xl font-medium">
+              Expert support <br /> Seven days a week
+            </p>
+          </div>
+          <div className="shrink-0">
+            <img
+              src={Equal}
+              alt="Equal Icon"
+              className="lg:h-[40px] lg:w-[40px] w-10 h-10"
+            />
+          </div>
+          <div className="text-center">
+            <p className="lg:text-[20px] text-xl font-medium">
+              An extraordinary care <br /> At no extra cost
+            </p>
+          </div>
+          <div className="shrink-0">
+          <img
+              src={Hearts}
+              alt="Equal Icon"
+              className="lg:h-[50px] lg:w-[50px] w-20 h-20"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     </>
   );
 };

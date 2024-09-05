@@ -8,7 +8,7 @@ const Review = () => {
       <div className="container mx-auto">
         <div className="text-center mb-10">
           <h1 className="font-semibold lg:text-[48px] lg:leading-[65px] text-2xl ">
-            Everyone Loves Theraswift <span className="text-[#40B36E]">Rx</span>
+            Everyone Loves Theraswift
           </h1>
           <p className="lg:text-[26px] font-normal font-body lg:leading-[35px] text-lg">
             Look at what our customers are saying

@@ -13,6 +13,8 @@ import Manufacturer from "./components/manufacturers";
 import Contact from "./components/contact";
 import DeleteAccount from "./components/DeleteAccount";
 import VerifyAccount from "./components/VerifyAccount";
+import SignUpPage from "./components/sign-up";
+import SignUpFlow from "./components/Signupflow";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +71,10 @@ const router = createBrowserRouter([
   {
     path: "/join-waitlist",
     element: <WaitList />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignUpPage />,
   },
 ]);
 

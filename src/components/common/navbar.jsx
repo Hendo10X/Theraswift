@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import logo from "../../assets/logo.svg";
-import Button from "./button";
-
+// Make sure the path to the logo is correct.
+import logo from "../../assets/Terralogo.svg";
 
 const linkList = [
   {
     id: 1,
-    label: "For Providers",
-    path: "/doctors",
+    label: "Meds",
+    path: "/meds",
   },
   {
     id: 2,
-    label: "For Manufacturers",
-    path: "/manufacturers",
+    label: "Weight loss",
+    path: "/weight-loss",
   },
   {
     id: 3,
-    label: "About Us",
+    label: "About us",
     path: "/about",
   },
 ];
@@ -40,84 +39,46 @@ const Navbar = () => {
   });
 
   const { pathname } = useLocation();
-  const [title, setTitle] = useState("");
-
-  useEffect(() => {
-    switch (pathname) {      
-      case "/doctors":
-        setTitle("Doctors");
-        break;
-        case'/manufacturers':
-        setTitle('For Manufacturers');
-        break;
-      case "/faq":
-        setTitle("FAQs");
-        break;
-      case "/about":
-        setTitle("About Us");
-        break;
-      default:
-        setTitle("/");
-        break;
-    }
-  }, []);
 
   return (
     <div
-      className={`bg-white py-4 font-poppins px-5 xl:px-[90px] top-0 left-0 right-0 ${
+      className={`bg-white py-4 px-5 xl:px-[90px] top-0 left-0 right-0 ${
         isSticky ? "fixed" : "relative"
-      } fixed z-20`}
+      } z-20`}
     >
-      <div className="max-w-[92vw] mx-auto">
-      <div className="flex items-center w-full justify-between">
-        <div className="">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
           <Link to="/">
-            <div className=" bg-white px-5 py-2">
-              <img src={logo} alt="logo" className="lg:w-[150px] w-[130px]"/>
-            </div>
+            <img src={logo} alt="logo" className="lg:w-[60px] w-[50px]" /> {/* Smaller logo */}
+          </Link>
+
+          <div className="hidden lg:flex items-center ml-9 space-x-8"> {/* Added 36px spacing */}
+            {linkList.map((link) => (
+              <Link
+                key={link.id}
+                to={link.path}
+                className={`text-md font-medium ${
+                  pathname === link.path ? "text-black" : "text-gray-600"
+                } hover:text-green-500`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden lg:flex items-center space-x-5">
+          <Link to="/sign-up" className="text-gray-600 text-sm hover:text-green-500">
+            Sign In
+          </Link>
+          <Link to="/get-started">
+            <button className="px-6 py-2 rounded-full font-medium text-white bg-green-500 hover:bg-black transition duration-300">
+              Get Started
+            </button>
           </Link>
         </div>
-        <div
-          className={`lg:flex min-w-[70%] lg:justify-between items-center ${
-            menu
-              ? "flex flex-col fixed top-0 bottom-0 right-0 bg-white px-5 gap-10 pt-14"
-              : "hidden"
-          }`}
-        >
-       
-          <div className="flex flex-col items-center justify-center pb-5 pt-8">
-            <ul className="flex flex-col lg:flex-row gap-10 px-8 py-4 bg-primary-100 rounded-full whitespace-nowrap ">
-              {linkList.map((link) => (
-                  <li
-                      key={link.id}
-                      onClick={() => setTitle(link.label)}
-                      className={`hover:text-green-500 text-md uppercase font-semibold ${
-                          pathname === link.path &&
-                          "text-green-500 border-b-2 border-green-500"
-                      }`}
-                  >
-                    <Link to={link.path}>{link.label}</Link>
-                  </li>
-              ))}
-            </ul>
-          </div>
 
-          <div className="flex lg:flex-row flex-col items-center lg:items-start gap-5 text-sm w-full lg:w-auto ">
-            <div className="flex flex-col gap-10 lg:flex-row">
-            <Link className="whitespace-nowrap" to="/download">
-              <Button variant="outlined" color="black">
-                LOG IN
-              </Button>
-            </Link>
-
-            <Link className="whitespace-nowrap" to="/check-if-we-deliver">
-              <Button variant="filled" color="black">
-                GET STARTED
-              </Button>
-            </Link>
-            </div>
-          </div>
-        </div>
+        {/* Mobile Menu Button */}
         <div
           className={`lg:hidden p-3 flex flex-col items-end ${
             menu ? "fixed right-5" : "relative"
@@ -141,7 +102,6 @@ const Navbar = () => {
               "-rotate-[45deg] absolute top-4 !w-7 transition duration-500"
             }`}
           ></div>
-        </div>
         </div>
       </div>
     </div>
