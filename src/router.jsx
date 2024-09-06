@@ -14,7 +14,8 @@ import Contact from "./components/contact";
 import DeleteAccount from "./components/DeleteAccount";
 import VerifyAccount from "./components/VerifyAccount";
 import SignUpPage from "./components/sign-up";
-import SignUpFlow from "./components/Signupflow";
+import ConfirmPersonalInfo from "./components/Personalnform";
+import VerificationPage from "./components/VerificationPage";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,15 @@ const router = createBrowserRouter([
     path: "/sign-up",
     element: <SignUpPage />,
   },
+  {
+    path: "/Personalnform",
+    element: <ConfirmPersonalInfo/>,
+  },
+  {
+    path: "/VerificationPage",
+    element: <VerificationPage/>,
+  },
+  
 ]);
 
 export default router;
