@@ -97,14 +97,14 @@ const VerificationPage = () => {
           >
             Continue
           </Link>
-
+            <Link to="/SelectMethod">
           <div className="mt-4">
             <p className="text-gray-600">Didn't get a code?</p>
             <button onClick={sendOtp} className="text-emerald-800 font-semibold underline mt-1">
               Try another way
             </button>
           </div>
-
+          </Link >
           <div className="mt-6">
             <label className="text-lg mr-4">Verify via:</label>
             <select
@@ -123,3 +123,5 @@ const VerificationPage = () => {
 };
 
 export default VerificationPage;
+
+

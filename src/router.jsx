@@ -16,6 +16,7 @@ import VerifyAccount from "./components/VerifyAccount";
 import SignUpPage from "./components/sign-up";
 import ConfirmPersonalInfo from "./components/Personalnform";
 import VerificationPage from "./components/VerificationPage";
+import SelectMethodPage from "./components/SelectMethod";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/VerificationPage",
     element: <VerificationPage/>,
+  },
+  {
+    path: "/SelectMethod",
+    element: <SelectMethodPage/>,
   },
   
 ]);
