@@ -4,7 +4,7 @@ import Equal from "../../assets/equal.png";
 import Hearts from "../../assets/heart.png";
 import { Link } from "react-router-dom";
 import medsDeliveryImage from '../../assets/medsDelivery.png';  // Add the path to your image
-import supportImage from '../../assets/support.png';  // Add the path to your image
+import supportImage from '../../assets/Support.png';  // Add the path to your image
 import manageCareImage from '../../assets/manageCare.png';  // Add the path to your image
 import { ArrowRight, Clock, Heart } from 'lucide-react';
 
