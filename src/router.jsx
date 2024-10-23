@@ -17,6 +17,25 @@ import SignUpPage from "./components/sign-up";
 import ConfirmPersonalInfo from "./components/Personalnform";
 import VerificationPage from "./components/VerificationPage";
 import SelectMethodPage from "./components/SelectMethod";
+import LoginPage from "./components/LoginPage";
+import EmailVerificationPage from "./components/EmailVerificationPage";
+import PhoneLoginPage from "./components/PhoneLoginPage";
+import PasswordResetPage from "./components/PasswordResetPage";
+import MedicationSelector from "./components/MedicationSelector";
+import Dashboard from "./components/Dashboard";
+import OrderPage from "./components/OrderPage";
+import PatientInfoForm from "./components/PatientInfoForm.jsx";
+import CheckoutPage from "./components/CheckoutPage.jsx";
+import BagCheckoutPage from "./components/BagCheckoutPage.jsx";
+import AddressPage from "./components/AddressPage.jsx";
+import DateTimePicker from "./components/DateTimePicker.jsx";
+import ProfilePage from "./components/ProfilePage.jsx";
+import MedicalInfoPage from "./components/MedicalInfo.jsx";
+import SettingsPage from "./components/SettingsPage.jsx";
+import DeliveryPage from "./components/DeliveryPage.jsx";
+import InvitePage from "./components/InvitePage.jsx";
+import EssentialsPage from "./components/EssentialsPage.jsx";
+import ChatInterface from "./components/ChatInterface.jsx";
 
 const router = createBrowserRouter([
   {
@@ -80,15 +99,91 @@ const router = createBrowserRouter([
   },
   {
     path: "/Personalnform",
-    element: <ConfirmPersonalInfo/>,
+    element: <ConfirmPersonalInfo />,
   },
   {
     path: "/VerificationPage",
-    element: <VerificationPage/>,
+    element: <VerificationPage />,
   },
   {
     path: "/SelectMethod",
-    element: <SelectMethodPage/>,
+    element: <SelectMethodPage />,
+  },
+  {
+    path: "/EmailVerificationPage",
+    element: <EmailVerificationPage />,
+  },
+  {
+    path: "/LoginPage",
+    element: <LoginPage />,
+  },
+  {
+    path: "/PasswordResetPage",
+    element: <PasswordResetPage />,
+  },
+  {
+    path: "/PhoneLoginPage",
+    element: <PhoneLoginPage />,
+  },
+  {
+    path: "/MedicationSelector",
+    element: <MedicationSelector />,
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/Orderpage",
+    element: <OrderPage />,
+  },
+  {
+    path: "/PatientInfoForm",
+    element: <PatientInfoForm />,
+  },
+  {
+    path: "/CheckoutPage",
+    element: <CheckoutPage />,
+  },
+  {
+    path: "/BagCheckoutPage",
+    element: <BagCheckoutPage />,
+  },
+  {
+    path: "/AddressPage",
+    element: <AddressPage />,
+  },
+  {
+    path: "/DateTimePicker",
+    element: <DateTimePicker />,
+  },
+  {
+    path: "/ProfilePage",
+    element: <ProfilePage />,
+  },
+  {
+    path: "/MedicalInfoPage",
+    element: <MedicalInfoPage />,
+  },
+  {
+    path: "/SettingsPage",
+    element: <SettingsPage />,
+  },
+  {
+    path: "/DeliveryPage",
+    element: <DeliveryPage />,
+  },
+  {
+    path: "/InvitePage",
+    element: <InvitePage />,
+  },
+  {
+    path: "/EssentialsPage",
+    element: <EssentialsPage />,
+  },
+  {
+    path: "/ChatInterface",
+    element: <ChatInterface />,
   },
   
 ]);

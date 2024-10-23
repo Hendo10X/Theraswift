@@ -91,7 +91,7 @@ const CheckIfWeDeliverReusable = () => {
                     as="select"
                     id="state"
                     name="state"
-                    className=" w-full p-2 border border-gray-300 text-white rounded bg-teal-500"
+                    className=" w-full p-2 border border-gray-300 text-white rounded bg-emerald-800"
                   >
                     <option value="">Select a state</option>
                     {nigerianStates.map((state) => (

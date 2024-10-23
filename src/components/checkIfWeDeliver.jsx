@@ -59,7 +59,7 @@ const CheckIfWeDeliver = () => {
     console.log("values", values);
 
     if (values.state === "lagos" || values.state === "ogun")
-      return navigate("/download");
+      return navigate("/sign-up");
 
     return navigate("/join-waitlist");
   };
@@ -116,7 +116,7 @@ const CheckIfWeDeliver = () => {
                   as="select"
                   id="state"
                   name="state"
-                  className=" w-full p-2 py-3 border border-gray-300 text-white bg-teal-500"
+                  className=" w-full p-2 py-3 border border-gray-300 text-white bg-emerald-800"
                 >
                   <option value="">Select a state</option>
                   {nigerianStates.map((state) => (
@@ -127,9 +127,9 @@ const CheckIfWeDeliver = () => {
                 </Field>
               </div>
             </div>
-            <Button type="submit" variant="filled" color="black">
-              Continue
-            </Button>
+            <Button type="submit" variant="filled" color="black" rounded-full>
+            Continue
+          </Button>
           </Form>
         </Formik>
       </Flex>
